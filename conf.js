@@ -10,6 +10,6 @@ conf.remoteDatabaseUser = "";
 conf.remoteDatabasePassword = "";
 conf.remoteDatabaseDb = "";
 
-conf.contests_id = [];
+conf.contest_id = [];
 
-module.export = conf;
+module.exports = conf;

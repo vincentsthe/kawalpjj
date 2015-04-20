@@ -15,7 +15,7 @@ app.set('views', require('path').join(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
-app.set('port', 8080);
+app.set('port', 3000);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -57,14 +57,5 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
-app.listen(3000, function (err) {
-  if (err) { 
-    console.log(err);
-  } else {
-    console.log("App started at port 8080");
-  }
-});
-
 
 module.exports = app;

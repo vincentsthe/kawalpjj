@@ -21,6 +21,7 @@ var appMysqlpool = mysql.createPool({
   database: conf.appDatabaseDb,
   debug: false
 });
+driver.appMysqlpool = appMysqlpool;
 
 var remoteMysqlpool = mysql.createPool({
   connectionLimit: 100,
@@ -30,6 +31,7 @@ var remoteMysqlpool = mysql.createPool({
   database: conf.remoteDatabaseDb,
   debug: false
 });
+driver.remoteMysqlpool = remoteMysqlpool;
 
 
 module.exports = driver;
