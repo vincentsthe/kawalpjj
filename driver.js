@@ -24,7 +24,7 @@ var appMysqlpool = mysql.createPool({
 driver.appMysqlpool = appMysqlpool;
 
 var remoteMysqlpool = mysql.createPool({
-  connectionLimit: 100,
+  connectionLimit: 10,
   host: conf.remoteHost,
   user: conf.remoteDatabaseUser,
   password: conf.remoteDatabasePassword,

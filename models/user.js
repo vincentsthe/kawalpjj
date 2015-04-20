@@ -1,8 +1,9 @@
 var driver = require('../driver');
+var conf = require('../conf');
 
 var userModel = {};
 
-userModel.fillUserScore = function(user, callback) {
+var fillUserScore = function(user, callback) {
   driver.appMysqlpool.getConnection(function (err, connection) {
     if (err) {
       throw err;
@@ -29,7 +30,7 @@ userModel.fillUserScore = function(user, callback) {
   });
 }
 
-userModel.fillUserSubmission = function(user, callback) {
+var fillUserSubmission = function(user, callback) {
   driver.appMysqlpool.getConnection(function (err, connection) {
     if (err) {
       throw err;
@@ -72,11 +73,11 @@ userModel.getUserStatistic = function (userId, callback) {
 
           driver.async.parallel([
             function (callback) {
-              userModel.fillUserScore(user, function () {
+              fillUserScore(user, function () {
                 callback(null);
               });
             }, function (callback) {
-              userModel.fillUserSubmission(user, function () {
+              fillUserSubmission(user, function () {
                 callback(null);
               });
             }
@@ -112,6 +113,14 @@ userModel.getAllUserLastInfo = function (callback) {
       });
     }
   });
+};
+
+userModel.getAllUsersId = function () {
+  var ids = [];
+  for (var i = conf.first_user_id; i <= conf.last_user_id; i++) {
+    ids.push(i);
+  }
+  return ids;
 };
 
 module.exports = userModel;

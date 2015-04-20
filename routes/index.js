@@ -3,6 +3,8 @@ var router = express.Router();
 var user = require('../models/user');
 var submission = require('../models/submission');
 var score = require('../models/score');
+var updater = require('../crawler/updater');
+var userRetriever = require('../crawler/userRetriever');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -31,6 +33,18 @@ router.get('/user/:userId', function (req, res, next) {
 router.get('/user', function (req, res, next) {
   user.getAllUserLastInfo(function (userData) {
     res.json(userData);
+  });
+});
+
+router.get('/update', function (req, res, next) {
+  updater.updateData(function (status) {
+    res.json(status);
+  });
+});
+
+router.get('/user/fetch', function (req, res, next) {
+  userRetriever.fetchUser(function (status) {
+    res.json(status);
   });
 });
 
