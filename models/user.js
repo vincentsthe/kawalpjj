@@ -1,4 +1,4 @@
-var driver = require('../driver');
+var driver = require('../utility/driver');
 var conf = require('../conf');
 
 var userModel = {};

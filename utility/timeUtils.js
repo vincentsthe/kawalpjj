@@ -1,5 +1,5 @@
 var moment = require('moment');
-var conf = require('./conf');
+var conf = require('./../conf');
 
 var timeUtils = {};
 

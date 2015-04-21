@@ -1,7 +1,7 @@
-var driver = require('../driver');
+var driver = require('../utility/driver');
 var user = require('../models/user');
 var conf = require('../conf');
-var timeUtils = require('../timeUtils');
+var timeUtils = require('../utility/timeUtils');
 
 var updater = {};
 
@@ -171,9 +171,9 @@ var updateScore = function (submissions, callback) {
 updater.updateData = function (callback) {
   driver.remoteMysqlpool.getConnection(function (err, connection) {
     if (err) {
-      throw err;
-      callback({status: "error connecting to database"});
       console.log('Remote database connection failed');
+      callback({status: "error connecting to database"});
+      throw err;
     } else {
       var query = "SELECT submitted_time, submitter_id, contest_id, problem_id, score" +
                   " FROM submissions" +

@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 
+var cron = require('./utility/cron');
+
 var app = express();
 
 // view engine setup
