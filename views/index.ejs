@@ -1,8 +1,67 @@
+<!DOCTYPE HTML>
+
 <html>
 	<head>
 		<title>Kawal PJJ</title>
+		<link rel="shortcut icon" type="image/ico" href='/images/favicon.ico'>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/layout.css">
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	</head>
 	<body>
-		<h1>Kawal PJJ</h1>
+		<div class="main-container">
+			<header>
+				<div class="container">
+					<div class="col-md-12">
+						<div class="clearfix">
+							<div class="pull-left">
+								<img class="logo" src='images/logo.png' alt="Logo Tokilearning"/>
+							</div>
+							<div class="title pull-left">
+								<h1>Kawal PJJ</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="clearfix"></div>
+			<div class="content">
+				<div class="container">
+					<div class="inner-container clearfix">
+				        <div class="col-md-3 sidebar">
+				            <nav class="menu menu-user">
+				                <ul class="list-group">
+				                    <li id="user-announcement" class='list-group-item'>
+				                        <a href="#/" class="main-link"><i class="fa fa-dashboard"></i> Overview<div class="arrow"></a>
+				                    </li>
+				                    <li id="user-contest" class='list-group-item'>
+				                        <a href="#/contestant/list" class="main-link"><i class="fa fa-group"></i> Kontestan<div class="arrow"></div></a>
+				                    </li>
+				                </ul>
+				            </nav>
+				        </div>
+				        <div class="col-md-9 main-content clearfix">
+				            <div ui-view></div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<footer>
+			<div class="container">
+				<div class="pull-left first">
+					<div class="col-md-12">
+						<div class="copyright">
+							&#169; 2014 Tim Olimpiade Komputer Indonesia
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script type="text/javascript" data-main="/angular/main.js" src="/angular/libs/require/require.min.js"></script>
 	</body>
 </html>

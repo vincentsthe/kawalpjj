@@ -21,6 +21,7 @@ scoreModel.getScoreStatistic = function (callback) {
           callback(null);
         }, function (err) {
           if (!err) {
+            scoreArray.unshift([0]);
             callback(scoreArray);
           }
         });

@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "GothamRnd-Book";
+  src: url(../fonts/GothamRnd-Book.otf);
+}
+@font-face {
+  font-family: "GothamRnd-Medium";
+  src: url(../fonts/GothamRnd-Medium.otf);
+}
+
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+body {
+    color: #FFFFFF;
+    font-family: "GothamRnd-Book";
+    font-size: 12px;
+}
+input[type="text"], input[type="password"], textarea
+{
+    color: #000000;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.lowercase
+{
+    text-transform: lowercase;
+}
+::-webkit-input-placeholder
+{
+	padding-left: 2px;
+	font-family: "GothamRnd-Book";
+	font-size: 12px;
+}
+:-moz-placeholder
+{
+	padding-left: 2px;
+	font-family: "GothamRnd-Book";
+	font-size: 12px;
+}
+::-moz-placeholder
+{
+	padding-left: 2px;
+	font-family: "GothamRnd-Book";
+	font-size: 12px;
+}
+:-ms-input-placeholder
+{
+	padding-left: 2px;
+	font-family: "GothamRnd-Book";
+	font-size: 12px;
+}
+.placeholder
+{
+	padding-top: 3px;
+	padding-left: 2px;
+	font-family: "GothamRnd-Book";
+	font-size: 12px;
+}
+button
+{
+	color: #FFFFFF;
+	font-family: "GothamRnd-Medium";
+	font-size: 14px;
+	text-transform: uppercase;
+	border: 0px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.content
+{
+	min-height: 724px;
+}
+
+header
+{
+	background-color: #24333f;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";       /* IE 8 */
+	filter: alpha(opacity=90);  /* IE 5-7 */
+	-moz-opacity: 0.9;          /* Netscape */
+	-khtml-opacity: 0.9;        /* Safari 1.x */
+	opacity: 0.9;               /* Good browsers */
+	min-height: 86px;
+}
+header .logo
+{
+	margin: 12px 0;
+	height: 60px;
+}
+footer
+{
+	background-color: #7f9ba2;
+	height: 100px;
+	padding: 20px 0;
+}
+footer a
+{
+    color: #FFFFFF !important;
+}
+footer .copyright {
+    margin-top: 10px;
+}
+footer .first .social {
+    margin-top: 10px;
+}
+footer .first .social a {
+    text-decoration: underline;
+}
+footer .second {
+    margin-top: 20px;
+}
+footer .second nav a {
+    font-family: "GothamRnd-Medium";
+    font-size: 14px;
+    margin-left: 20px;
+}
+footer .second .languages {
+    margin-top: 10px;
+}
+footer .second .languages a {
+    margin-left: 10px;
+}

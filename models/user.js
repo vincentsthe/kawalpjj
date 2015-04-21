@@ -22,6 +22,7 @@ var fillUserScore = function(user, callback) {
           callback(null);
         }, function (err) {
           if (!err) {
+            user.score.unshift([0]);
             callback();
           }
         });
@@ -49,6 +50,7 @@ var fillUserSubmission = function(user, callback) {
           callback(null);
         }, function (err) {
           if (!err) {
+            user.submission.unshift([0]);
             callback();
           }
         });

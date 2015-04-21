@@ -21,6 +21,7 @@ submissionModel.getSubmissionStatistic = function (callback) {
           callback(null);
         }, function (err) {
           if (!err) {
+            submissionArray.unshift([0]);
             callback(submissionArray);
           }
         });

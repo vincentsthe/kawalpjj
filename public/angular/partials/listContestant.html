@@ -1,0 +1,29 @@
+<div ng-show="!loadSuccess" class="">
+	<div style="height:160px;"></div>
+	<div class="text-center">
+		<h1><i class="fa fa-refresh fa-spin fa-3x"></i></h1>
+	</div>
+</div>
+
+<div ng-show="loadSuccess" class="show">
+	<h1>Daftar Kontestan</h1>
+	<hr>
+	<div class="row">
+		<div class="col-md-4">
+			<input type="text" class="form-control" placeholder="Keywords..." ng-model="keywords">
+		</div>
+		<div class="col-md-8">
+		</div>
+	</div>
+	<br><br>
+	<p>Untuk mengurutkan berdasarkan header, klik pada header.</p>
+	<svg id="container" width="900">
+		<g class="title" transform="translate(0, 0)">
+			<rect width="900" height="30"></rect>
+			<text x="5" y="15" dy=".35em"><a ng-click="changeSortBy('username')" ng-class="sortBy=='username' ? 'active' : ''">Username</a></text>
+			<text x="120" y="15" dy=".35em"><a ng-click="changeSortBy('fullname')" ng-class="sortBy=='fullname' ? 'active' : ''">Fullname</a></text>
+			<text x="470" y="15" dy=".35em"><a ng-click="changeSortBy('score')" ng-class="sortBy=='score' ? 'active' : ''">Score</a></text>
+			<text x="620" y="15" dy=".35em"><a ng-click="changeSortBy('submission')" ng-class="sortBy=='submission' ? 'active' : ''">Submission</a></text>
+		</g>
+	</svg>
+</div>

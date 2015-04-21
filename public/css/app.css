@@ -1,0 +1,68 @@
+.reveal.ng-enter {
+	-webkit-transition: 1s linear all;
+	transition: 1s linear all;
+
+	opacity: 0;
+}
+
+.reveal.ng-enter.ng-enter-active {
+	opacity: 1;
+}
+
+.show {
+	-webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.show.ng-hide {
+	opacity: 0;
+}
+
+.animate-enter {
+	-webkit-transition: 1s linear all; /* Chrome */
+	transition: 1s linear all;
+	opacity: 0;
+}
+ 
+.animate-enter.animate-enter-active {
+	opacity: 1;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x .axis path {
+  display: none;
+}
+
+.title rect {
+	fill: steelblue;
+}
+
+.bar rect {
+	fill: #F1F1F1;
+}
+
+a.active {
+	fill: #F00;
+}
+
+.title text {
+	fill: white;
+}
+
+svg text {
+	font-size: 1.5em;
+}
+
+.link {
+	fill: #2a6496;
+}
