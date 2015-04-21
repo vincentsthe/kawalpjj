@@ -123,13 +123,13 @@ var updateScore = function (submissions, callback) {
         for (var i = conf.first_user_id; i <= conf.last_user_id; ++i) {
           userSubmissionHighestScore[i] = {};
         }
-        for (var i = 0; i <= submissions.length; ++i) {
+        for (var i = 0; i < submissions.length; ++i) {
           if (submissions[i].day <= day) {
-            var problemId = submissions.problem_id.toString();
+            var problemId = submissions[i].problem_id.toString();
             if (problemId in userSubmissionHighestScore[submissions[i].submitter_id]) {
-              userSubmissionHighestScore[submissions.submitter_id][problemId] = Math.max(submissions[i].score, userSubmissionHighestScore[submissions.submitter_id][problemId]);
+              userSubmissionHighestScore[submissions[i].submitter_id][problemId] = Math.max(submissions[i].score, userSubmissionHighestScore[submissions[i].submitter_id][problemId]);
             } else {
-              userSubmissionHighestScore[submissions.submitter_id][problemId] = submissions[i].score;
+              userSubmissionHighestScore[submissions[i].submitter_id][problemId] = submissions[i].score;
             }
           }
         }

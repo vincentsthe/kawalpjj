@@ -22,7 +22,7 @@ var deleteUserTable = function (callback) {
 };
 
 var insertToDb = function (userDatas, callback) {
-  driver,appMysqlpool.getConnection(function (err, connection) {
+  driver.appMysqlpool.getConnection(function (err, connection) {
     if (err) {
       callback({status: err});
       throw err;
@@ -32,11 +32,15 @@ var insertToDb = function (userDatas, callback) {
           deleteUserTable(callback);
         }, function (callback) {
           driver.async.each(userDatas, function (userData, callback) {
-            connection.query("INSERT INTO user SET ?", scoreData, function (err, result) {
+            connection.query("INSERT INTO user SET ?", userData, function (err, result) {
               callback(err);
             });
           }, function (err) {
-            callback(err);
+            if (err) {
+              callback(err);
+            } else {
+              callback({status: 'OK'});
+            }
           });
         }
       ], function (err) {
@@ -52,7 +56,7 @@ userRetriever.fetchUser = function (callback) {
       callback({status: 'error'});
       throw err;
     } else {
-      var query = "SELECT id AS lx_id, username, full_name" +
+      var query = "SELECT id AS lx_id, username, full_name AS fullname " +
                   " FROM users" +
                   " WHERE id IN (" + user.getAllUsersId().join(',') + ")";
       connection.query(query, function (err, rows) {

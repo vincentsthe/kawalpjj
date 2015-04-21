@@ -23,6 +23,12 @@ router.get('/submission/average', function (req, res, next) {
   });
 });
 
+router.get('/user/fetch', function (req, res, next) {
+  userRetriever.fetchUser(function (status) {
+    res.json(status);
+  });
+});
+
 router.get('/user/:userId', function (req, res, next) {
   var userId = req.params.userId;
   user.getUserStatistic(userId, function (userStatistic) {
@@ -38,12 +44,6 @@ router.get('/user', function (req, res, next) {
 
 router.get('/update', function (req, res, next) {
   updater.updateData(function (status) {
-    res.json(status);
-  });
-});
-
-router.get('/user/fetch', function (req, res, next) {
-  userRetriever.fetchUser(function (status) {
     res.json(status);
   });
 });
